@@ -1,0 +1,39 @@
+
+Video: https://www.youtube.com/watch?v=X80nJ5T7YpE&feature=em-uploademail
+
+Step 1
+A /authenticate API endpoint
+
+	- Accepts user ID and password
+	- Returns JWT as response
+	
+Step 2
+
+Intercept all incoming requests
+	- Extract JWT from the header
+	- Validate and set in execution context
+	
+-------------------
+HOW TO RUN:
+-------------------
+1. Run java app
+2. using postman generate a Bearer token:
+
+	- POST   http://localhost:8080/authenticate
+	
+	Headers
+	- KEY: Content-Type VALUE: application/json
+	- KEY: Authorization VALUE: Bearer
+	
+	Body
+	{
+	"username": "foo",
+	"password": "foo"
+	}
+	
+	Click send - copy token
+	
+3. GET    http://localhost:8080/hello
+	- copy token to the Bearer value and click send
+
+	
